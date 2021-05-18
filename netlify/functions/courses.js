@@ -93,7 +93,27 @@ exports.handler = async function(event) {
     // add the section Object to the return value
     returnValue.sections.push(sectionObject)
 
-    // 🔥 your code for the reviews/ratings goes here
+    // 🔥 your code for the reviews/ratings goes here (hw7)
+    
+    // get the reviews, wait for it to return, store in memory
+    let reviewsQuery = await db.collection(`reviews`).where(`sectionId`,`==`, sectionId).get()
+
+    // get documents from the query
+    let reviews = reviewsQuery.docs
+
+    // create variable to store reviews / sum up totals
+
+
+    // loop through the reviews documents
+      // get the id from the review document
+      // get the data from the review document
+      // create an Object for the reviews data (body, rating)
+
+      // add the reviews Object to the return value (sectionObject)
+
+    
+    // calculate average ratings by course/lecturer and course as a whole 
+
   }
 
   // return the standard response
